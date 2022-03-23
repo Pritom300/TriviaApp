@@ -13,6 +13,7 @@ import com.example.trivia.controller.AppController;
 import com.example.trivia.model.Question;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,7 +33,24 @@ public class QuestionBank {
                     @Override
                     public void onResponse(JSONArray response) {
 
-                        Log.d("JSON Stuff", "onResponse: "+response);
+                        for (int i=0;i<response.length();i++)
+                        {
+                            try {
+                                Question question = new Question();
+                                question.setAnswer( response.getJSONArray(i).get(0).toString());
+                                question.setAnswerTrue(response.getJSONArray(i).getBoolean(1));
+
+
+
+                                //Add Question Object To Array List
+                                questionArrayList.add(question);
+                                //response.getJSONArray(i).get(0);
+                                //response.getJSONArray(i).getBoolean(1);
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+                        }
+
 
                     }
                 }, new Response.ErrorListener() {
@@ -44,7 +62,7 @@ public class QuestionBank {
 
         );
         AppController.getInstance().addToRequestQueue(jsonArrayRequest);
-        return  null;
+        return  questionArrayList;
     }
 
 
