@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/lake_gbe101dfe0_640"
+    android:background="@color/purple_200"
     tools:context=".MainActivity">
 
     <TextView
@@ -32,7 +32,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.488"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" >
+
+        <TextView
+            android:id="@+id/question_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hello!! Here we going to add something new!!"
+            android:textSize="16sp" />
+    </androidx.cardview.widget.CardView>
 
 
     <Button
@@ -86,7 +94,7 @@
         android:layout_marginEnd="28dp"
         android:fontFamily="@font/chewy"
         android:text="@string/counter_questions"
-        android:textSize="18dp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/cardView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />

@@ -33,7 +33,7 @@ public class QuestionBank {
                     @Override
                     public void onResponse(JSONArray response) {
 
-                        for (int i=0;i<response.length();i++)
+                        for (int i=0;i<response.length(); i++)
                         {
                             try {
                                 Question question = new Question();
@@ -51,7 +51,7 @@ public class QuestionBank {
                             }
                         }
 
-                        if(null!=callBack)
+                        if(callBack!=null)
                         {
                             callBack.processFinished(questionArrayList);
                         }

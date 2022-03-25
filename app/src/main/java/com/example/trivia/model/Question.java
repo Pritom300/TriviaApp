@@ -2,7 +2,7 @@ package com.example.trivia.model;
 
 public class Question {
     private String answer;
-    private  boolean answerTrue;
+    private boolean answerTrue;
 
     public Question() {
 
